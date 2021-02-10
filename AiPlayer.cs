@@ -36,6 +36,7 @@ namespace TicTacToe
                     } 
                 }
             }
+            sign = "O";
             optionsToChoose = 0;
             return chosenField;
         }
@@ -52,6 +53,11 @@ namespace TicTacToe
 
         bool FindDoubleOption(List<Field> fields, int[,] rows, string completeOrPrevent)
         {
+            if (completeOrPrevent == "completeRow")
+                sign = "O";
+            else
+                sign = "X";
+            
             List<Field> testList = CopyList(fields);
             for (int i = 0; i < testList.Count; i++)
             {
