@@ -129,7 +129,26 @@ namespace TicTacToe
             humanPlayer.turn = true;
             aiPlayer.turn = false;
             gameLogic.sign = humanPlayer.sign;
+
+            if (GameLogic.userStartedRound)
+            {
+                aiPlayer.turn = true;
+                humanPlayer.turn = false;
+                gameLogic.sign = aiPlayer.sign;
+                GameLogic.userStartedRound = false;
+                PutSignOnBoard(aiPlayer.ExecuteAiTurn(gameBoard.fields));
+            }
+            else
+            {
+                GameLogic.userStartedRound = true;
+                humanPlayer.turn = true;
+                aiPlayer.turn = false;
+                gameLogic.sign = humanPlayer.sign;
+            }
+
             GameLogic.gameOver = false;
+
+
         }
     }
 }

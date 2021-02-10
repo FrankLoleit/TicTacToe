@@ -8,6 +8,7 @@ namespace TicTacToe
         //public static int X_wins = 0;
         //public static int O_wins = 0;
         public static bool gameOver = false;
+        public static bool userStartedRound = true;
 
         public int[] winningRow = { -1, -1, -1 };
         public static int[,] rows =
